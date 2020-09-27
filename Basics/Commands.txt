@@ -31,3 +31,13 @@ Commands:
   
 ⦁	Deleting node
 	minikube delete
+	
+⦁	Describe Services
+	kubectl describe svc
+	
+⦁	Deployments and pods
+	kubectl get deployments
+	kubectl get pods
+	
+⦁	apiVersion
+	kubectl get ingress.v1beta1.extensions -o yaml
