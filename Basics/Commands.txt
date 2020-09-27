@@ -1,0 +1,33 @@
+Installation:
+https://kubernetes.io/docs/tasks/tools/install-minikube/#:~:text=Minikube%20should%20have%20been%20added%20to%20your%20path,to%20minikube.exe%2C%20and%20add%20it%20to%20your%20path.
+
+Commands:
+
+⦁	Start Minikube
+	minikube start
+  
+⦁	Check Status
+	minikube status
+  
+⦁	Create a new pod
+	kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+  
+⦁	Check the status of pod
+	kubectl expose deployment hello-minikube  --type=NodePort 
+	OR
+	kubectl get pod
+  
+⦁	Use minikube service to access pod (Pod is an instance of a  container)
+	curl $(minikube service hello-minikube --url)
+  
+⦁	Delete the deployment
+	kubectl delete deployment hello-minikube
+	OR
+	minikube stop (To free up resources)
+  
+⦁	Get the details of all the deployments
+	kubectl get all
+	kubectl get all -n kube-system
+  
+⦁	Deleting node
+	minikube delete
